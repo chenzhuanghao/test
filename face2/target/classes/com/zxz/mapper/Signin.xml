@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.zxz.mapper.SigninMapper">
+	    <insert id="add" parameterType="Signin" >
+	        insert into signin ( state_id,user_id ) values (#{state},#{worker})    
+	    </insert>
+	    
+	    <delete id="delete" parameterType="Signin" >
+	        delete from dept where id= #{id}   
+	    </delete>
+	    
+	    <select id="get" parameterType="_int" resultType="Signin">
+	        select * from   dept  where id= #{id}    
+	    </select>
+
+	    <update id="update" parameterType="Signin" >
+	        update Signin set dname=#{dname},address=#{address} where id=#{id}    
+	    </update>
+	    <select id="list" resultType="Signin">
+	        select * from  Signin      
+	    </select>	    
+	</mapper>
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+	<mapper namespace="com.zxz.mapper.WorkerMapper">
+	    <insert id="insert" parameterType="Worker">
+	        insert into worker ( user_pass,uname,job,sal,comm,dept_id) values (#{user_pass},#{uname},#{job},#{sal},#{comm},#{dept_id})    
+	    </insert>
+	    
+	    <delete id="delete" parameterType="Worker" >
+	        delete from worker where id= #{user_id}   
+	    </delete>
+	    
+	    <select id="selectId" parameterType="String" resultType="int">
+	        select user_id from   worker  where user_pass= #{user_pass}    
+	    </select>
+
+	    <update id="update" parameterType="Worker" >
+	        update worker set user_pass=#{user_pass},uname=#{uname},job=#{job},sal=#{sal},comm=#{comm},dept_id=#{dept_id} where user_id=#{user_id}    
+	    </update>
+	    <select id="list" resultType="Worker">
+	        select * from  worker      
+	    </select>	    
+	</mapper>
+
